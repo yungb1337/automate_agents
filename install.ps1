@@ -91,8 +91,8 @@ Copy-IfNotExists "$ScriptDir\project_memory\module_status.md" "$Target\project_m
 # Create checkpoints directory
 Write-Host ""
 Write-Host "Creating checkpoints directory..."
-if (-not (Test-Path "$Target\checkpoints")) {
-    New-Item -ItemType Directory -Path "$Target\checkpoints" -Force | Out-Null
+if (-not (Test-Path "$Target\checkpoints\run")) {
+    New-Item -ItemType Directory -Path "$Target\checkpoints\run" -Force | Out-Null
 }
 if (-not (Test-Path "$Target\checkpoints\.gitkeep")) {
     New-Item -ItemType File -Path "$Target\checkpoints\.gitkeep" -Force | Out-Null

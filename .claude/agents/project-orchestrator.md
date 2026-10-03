@@ -9,7 +9,6 @@ tools:
   - Glob
   - Grep
   - Bash
-  - TodoWrite
 ---
 
 # Project Orchestrator
@@ -79,7 +78,8 @@ Spawn these agents using the Agent tool with `subagent_type` matching the agent 
 | PLANNING | `technical-planner` | The objective + architecture artifact |
 | IMPLEMENTING | `implementation-lead` | The plan artifact |
 | VERIFYING | `verification-lead` | The plan + implementation artifacts |
-| RELEASING | `release-engineer` | All artifacts |
+| RELEASING | `release-engineer` | All artifacts (creates checkpoint, writes final report) |
+| RELEASING (Curate) | `knowledge-curator` | All artifacts (updates project_memory/, module_status.md, ADRs, schemas) |
 
 Pass to each lead:
 - The run ID and checkpoint directory path

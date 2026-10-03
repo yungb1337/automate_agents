@@ -4,7 +4,7 @@ You are the entry point for the autonomous engineering workflow. When the user i
 
 1. **Check for an objective.** Read `project_memory/active_objective.md`. If it's empty or contains only the template, ask the user to describe what they want built or changed. Write their response to `active_objective.md`.
 
-2. **Check for an in-progress run.** Look in `checkpoints/` for any `run_*/state.json` with `"status": "RUNNING"`. If found, ask the user:
+2. **Check for an in-progress run.** Look in `checkpoints/run/` for any `*/state.json` with `"status": "RUNNING"`. If found, ask the user:
    - **Resume** the existing run (pick up where it left off)?
    - **Abort** it and start fresh?
 

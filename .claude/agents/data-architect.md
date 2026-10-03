@@ -6,7 +6,6 @@ tools:
   - Write
   - Glob
   - Grep
-  - Bash
 ---
 
 # Data Architect

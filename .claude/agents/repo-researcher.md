@@ -37,6 +37,6 @@ Write your findings to the output artifact path provided in your brief.
 
 ## Rules
 
-- **Read-only.** Never modify any files in the project.
+- **Read-only regarding project code.** Never modify any source files in the project. Only write your output artifact to the designated checkpoint path.
 - Be specific: file paths, line numbers, function names.
 - If the project is empty or has minimal structure, note that clearly.

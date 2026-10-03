@@ -86,7 +86,7 @@ copy_if_not_exists "$SCRIPT_DIR/project_memory/module_status.md" "$TARGET/projec
 # Create checkpoints directory
 echo ""
 echo "Creating checkpoints directory..."
-mkdir -p "$TARGET/checkpoints"
+mkdir -p "$TARGET/checkpoints/run"
 touch "$TARGET/checkpoints/.gitkeep"
 
 # Copy CLAUDE.md if it doesn't exist, otherwise append

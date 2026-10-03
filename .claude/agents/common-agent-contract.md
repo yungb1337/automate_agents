@@ -1,8 +1,3 @@
----
-model: sonnet
-description: "Common contract applied to every agent in the system. Defines communication format, state handling, failure reporting, and artifact structure."
----
-
 # Common Agent Contract
 
 Every agent in this system — leads and specialists alike — MUST follow these rules.

@@ -23,31 +23,65 @@ This is a template repository containing a full autonomous engineering "organiza
 
 Each phase has a **hard gate** — it must pass before the next starts. Failed verifications trigger fix rounds (max 3), then architectural replanning (max 2), then escalation to you.
 
-## Installation
+## Quick Start & How to Use
 
-### For a new project
-
-```bash
-# Option 1: Use as GitHub template
-# Click "Use this template" on GitHub, then start coding
-
-# Option 2: Clone and copy
-git clone https://github.com/YOUR_USERNAME/automate-agents.git
-cd automate-agents
-./install.sh /path/to/your/new/project
-```
-
-### For an existing project
+### Option 1: New project from scratch
 
 ```bash
-# From this template's directory:
-./install.sh /path/to/your/existing/project
+# 1. Create your new project
+mkdir my-new-app && cd my-new-app
+git init
 
-# On Windows (PowerShell):
-.\install.ps1 -Target C:\path\to\your\existing\project
+# 2. Clone the template somewhere (one-time)
+git clone https://github.com/yungb1337/automate_agents.git ~/automate_agents
+
+# 3. Run the installer pointing at your new project
+# Linux/macOS/Git Bash:
+bash ~/automate_agents/install.sh .
+
+# Windows PowerShell:
+~\automate_agents\install.ps1 -Target .
+
+# 4. Open in Claude Code (terminal, VS Code, or desktop app)
+claude .
+
+# 5. Run the workflow — either pass the objective inline:
+/dev-team Build a REST API with user auth using FastAPI and PostgreSQL
+
+# Or edit the objective file first, then run:
+#   Edit project_memory/active_objective.md with your goal
+#   Then: /dev-team
 ```
 
-The installer copies agent definitions and creates the project memory structure without touching your existing code. It will NOT overwrite existing files.
+That's it. The agents will scaffold the entire project — structure, configs, dependencies, code, and tests.
+
+---
+
+### Option 2: Existing project
+
+```bash
+# 1. cd into your existing project
+cd ~/projects/my-existing-app
+
+# 2. Run the installer (assumes you cloned the template already)
+# Linux/macOS/Git Bash:
+bash ~/automate_agents/install.sh .
+
+# Windows PowerShell:
+~\automate_agents\install.ps1 -Target .
+
+# 3. Open in Claude Code
+claude .
+
+# 4. Run it
+/dev-team Add rate limiting and request throttling to all API endpoints
+```
+
+The installer only adds `.claude/agents/`, `.claude/commands/`, `project_memory/`, and `checkpoints/`. It never touches your existing code. If you already have a `CLAUDE.md`, it skips that too and tells you to merge manually.
+
+---
+
+## Installation Details
 
 ### What gets installed
 
@@ -97,20 +131,7 @@ your-project/
 └── CLAUDE.md                    ← project config
 ```
 
-## Usage
-
-### Quick start
-
-```bash
-# Open your project in Claude Code, then:
-/dev-team Build a REST API for managing bookmarks with user auth
-
-# Or set the objective first:
-# Edit project_memory/active_objective.md, then:
-/dev-team
-```
-
-### What happens
+## How It Works
 
 1. **Research** — agents analyze your codebase (if existing), domain, dependencies, and risks
 2. **Architecture** — agents design the solution, write ADRs, define API contracts
@@ -123,33 +144,6 @@ If verification fails, the system automatically:
 - Tries fix rounds (up to 3)
 - Falls back to architectural replanning (up to 2)
 - Escalates to you if it's still stuck
-
-### For new projects
-
-Just create an empty directory and install:
-
-```bash
-mkdir my-new-app && cd my-new-app
-git init
-/path/to/automate-agents/install.sh .
-# Then in Claude Code:
-/dev-team Build a full-stack todo app with React, Express, and PostgreSQL
-```
-
-The agents will scaffold everything from scratch — project structure, configs, dependencies, code, and tests.
-
-### For existing projects
-
-Install into your project and run:
-
-```bash
-cd /path/to/my-existing-project
-/path/to/automate-agents/install.sh .
-# Then in Claude Code:
-/dev-team Add rate limiting to all API endpoints
-```
-
-The research phase will analyze your existing codebase and conventions before designing changes.
 
 ## Customization
 
