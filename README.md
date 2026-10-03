@@ -25,7 +25,27 @@ Each phase has a **hard gate** — it must pass before the next starts. Failed v
 
 ## Quick Start & How to Use
 
-### Option 1: New project from scratch
+### Option 1: Download ZIP from GitHub (easiest)
+
+1. Go to the [GitHub repo](https://github.com/yungb1337/automate_agents) and click **Code → Download ZIP**
+2. Extract the zip anywhere on your machine (e.g. `~/automate_agents` or `C:\Users\You\automate_agents`)
+3. Open a terminal in your target project (new or existing) and run the installer:
+
+```bash
+# Linux/macOS/Git Bash:
+bash /path/to/automate_agents/install.sh .
+
+# Windows PowerShell:
+C:\path\to\automate_agents\install.ps1 -Target .
+```
+
+4. Open the project in Claude Code and run `/dev-team` — that's it.
+
+The installer copies `.claude/agents/`, `.claude/commands/`, `project_memory/` templates, and `checkpoints/` into your project. It **skips** any files that already exist (won't overwrite your `CLAUDE.md`, existing `project_memory/`, etc.) and appends the workflow entries to your `.gitignore`.
+
+---
+
+### Option 2: Clone & install into a new project
 
 ```bash
 # 1. Create your new project
@@ -57,13 +77,13 @@ That's it. The agents will scaffold the entire project — structure, configs, d
 
 ---
 
-### Option 2: Existing project
+### Option 3: Install into an existing/mature project
 
 ```bash
 # 1. cd into your existing project
 cd ~/projects/my-existing-app
 
-# 2. Run the installer (assumes you cloned the template already)
+# 2. Run the installer (assumes you cloned or downloaded the template already)
 # Linux/macOS/Git Bash:
 bash ~/automate_agents/install.sh .
 
