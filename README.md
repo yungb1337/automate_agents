@@ -28,20 +28,31 @@ Each phase has a **hard gate** — it must pass before the next starts. Failed v
 ### Option 1: Download ZIP from GitHub (easiest)
 
 1. Go to the [GitHub repo](https://github.com/yungb1337/automate_agents) and click **Code → Download ZIP**
-2. Extract the zip anywhere on your machine (e.g. `~/automate_agents` or `C:\Users\You\automate_agents`)
-3. Open a terminal in your target project (new or existing) and run the installer:
+2. Extract the zip anywhere on your machine — this is the **template** (the thing you downloaded)
+3. Open a terminal and run the installer, pointing it at your **target project** (the project you want to add the workflow to):
 
 ```bash
 # Linux/macOS/Git Bash:
-bash /path/to/automate_agents/install.sh .
+bash <path-to-template>/install.sh <path-to-your-project>
 
 # Windows PowerShell:
-C:\path\to\automate_agents\install.ps1 -Target .
+<path-to-template>\install.ps1 -Target <path-to-your-project>
 ```
 
-4. Open the project in Claude Code and run `/dev-team` — that's it.
+**Example** — template extracted to `C:\Users\You\automate_agents`, installing into `C:\Users\You\projects\my-app`:
 
-The installer copies `.claude/agents/`, `.claude/commands/`, `project_memory/` templates, and `checkpoints/` into your project. It **skips** any files that already exist (won't overwrite your `CLAUDE.md`, existing `project_memory/`, etc.) and appends the workflow entries to your `.gitignore`.
+```powershell
+# PowerShell
+C:\Users\You\automate_agents\install.ps1 -Target "C:\Users\You\projects\my-app"
+```
+```bash
+# Git Bash
+bash /c/Users/You/automate_agents/install.sh /c/Users/You/projects/my-app
+```
+
+4. Open your project in Claude Code and run `/dev-team` — that's it.
+
+**What the installer does:** copies `.claude/agents/`, `.claude/commands/`, and `project_memory/` templates into your project. It **skips** any files that already exist (won't overwrite your `CLAUDE.md`, existing `project_memory/`, etc.) and appends the workflow entries to your `.gitignore`. It never touches your existing code.
 
 ---
 
