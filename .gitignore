@@ -1,0 +1,12 @@
+# Autonomous agent run checkpoints (optional - remove to track run history)
+checkpoints/
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Claude Code local settings
+.claude/settings.local.json
